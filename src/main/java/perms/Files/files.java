@@ -42,4 +42,4 @@ public class files {
         config = YamlConfiguration.loadConfiguration(file);
     }
 }
-//mvn install:install-file \-Dfile=/home/dumply/Documents/projects/plugins/dml/target/dml-1.0.0.jar \-DgroupId=com.dumplybg \-DartifactId=dml \-Dversion=1.0.0 \-Dpackaging=jar
+

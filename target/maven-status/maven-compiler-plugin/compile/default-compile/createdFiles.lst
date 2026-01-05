@@ -1,4 +1,5 @@
 perms/utils/Utils.class
+perms/Files/files.class
 perms/managers/PluginManager.class
 perms/listeners/PlayerListener.class
 perms/Perms.class

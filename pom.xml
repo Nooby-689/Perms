@@ -8,7 +8,7 @@
 
     <groupId>perms</groupId>
     <artifactId>Perms</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Perms</name>
     <url>http://www.example.com</url>
 
@@ -31,12 +31,6 @@
             <artifactId>spigot-api</artifactId>
             <version>1.21.10-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.dumplybg</groupId>
-            <artifactId>dml</artifactId>
-            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
