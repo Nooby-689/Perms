@@ -1,0 +1,6 @@
+main: perms.Perms
+version: 1.0.0
+name: Perms
+author: DumplyBG
+api-version: 1.13
+depend: [dml]
