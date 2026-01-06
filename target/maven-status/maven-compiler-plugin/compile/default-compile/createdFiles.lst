@@ -1,0 +1,8 @@
+perms/managers/PermsUtils.class
+perms/listeners/chatlistener.class
+perms/listeners/PlayerListener.class
+perms/Perms.class
+perms/managers/PermManager.class
+perms/utils/Utils.class
+perms/Files/files.class
+perms/managers/PluginManager.class
