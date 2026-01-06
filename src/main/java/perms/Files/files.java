@@ -19,7 +19,7 @@ public class files {
                 file.createNewFile();
             } catch (IOException e) {
                 System.out.println("Couldn't make the file: " + fileName);
-                e.printStackTrace();
+                e.printStackTrace(); 
             }
         }
         config = YamlConfiguration.loadConfiguration(file);

@@ -28,11 +28,16 @@ public class Perms extends JavaPlugin {
         players = new files("players.yml", this);
         perms = new files("perms.yml", this);
         
-        if (!players.get().contains("staff.Owner")) players.get().set("staff.Owner", "");
-        if (!players.get().contains("staff.Mod")) players.get().set("staff.Mod", "");
-        if (!players.get().contains("staff.Helper")) players.get().set("staff.Helper", "");
-        if (!players.get().contains("staff.CoOwner")) players.get().set("staff.CoOwner", "");
-        if (!players.get().contains("members.member")) players.get().set("members.member", "");
+        if (!players.get().isSet("staff.Owner.commands")) players.get().set("staff.Owner.commands", new ArrayList<>());
+        if (!players.get().isSet("staff.Mod.commands")) players.get().set("staff.Mod.commands", new ArrayList<>());
+        if (!players.get().isSet("staff.Helper.commands")) players.get().set("staff.Helper.commands", new ArrayList<>());
+        if (!players.get().isSet("staff.CoOwner.commands")) players.get().set("staff.CoOwner.commands", new ArrayList<>());
+        if (!players.get().isSet("members.member.commands")) players.get().set("members.member.commands", new ArrayList<>());
+        if (!players.get().isSet("staff.Owner.users")) players.get().set("staff.Owner.users", new ArrayList<>());
+        if (!players.get().isSet("staff.Mod.users")) players.get().set("staff.Mod.users", new ArrayList<>());
+        if (!players.get().isSet("staff.Helper.users")) players.get().set("staff.Helper.users", new ArrayList<>());
+        if (!players.get().isSet("staff.CoOwner.users")) players.get().set("staff.CoOwner.users", new ArrayList<>());
+        if (!players.get().isSet("members.member.users")) players.get().set("members.member.users", new ArrayList<>());
         players.save();
 
         Bukkit.getScheduler().runTask(this, () -> {
@@ -72,3 +77,4 @@ public class Perms extends JavaPlugin {
 
     }
 }
+
