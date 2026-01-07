@@ -54,6 +54,11 @@ public class Perms extends JavaPlugin {
         if (!players.get().isSet("staff.Helper.users")) players.get().set("staff.Helper.users", new ArrayList<>());
         if (!players.get().isSet("staff.CoOwner.users")) players.get().set("staff.CoOwner.users", new ArrayList<>());
         if (!players.get().isSet("members.member.users")) players.get().set("members.member.users", new ArrayList<>());
+        if (!players.get().isSet("staff.Owner.prefix")) players.get().set("staff.Owner.prefix", new ArrayList<>());
+        if (!players.get().isSet("staff.Mod.prefix")) players.get().set("staff.Mod.prefix", new ArrayList<>());
+        if (!players.get().isSet("staff.Helper.prefix")) players.get().set("staff.Helper.prefix", new ArrayList<>());
+        if (!players.get().isSet("staff.CoOwner.prefix")) players.get().set("staff.CoOwner.prefix", new ArrayList<>());
+        if (!players.get().isSet("members.member.prefix")) players.get().set("members.member.prefix", new ArrayList<>());
         players.save();
 
         Bukkit.getScheduler().runTask(this, () -> {
