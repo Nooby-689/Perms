@@ -9,15 +9,19 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
-import perms.managers.PluginManager;
 import perms.managers.PermManager;
-import perms.managers.PermsUtils;
-import perms.listeners.chatlistener;
+import perms.managers.PluginManager;
 import perms.Files.files;
+
+import perms.commands.executeCommand;
+import perms.commands.permsCommand;
+import perms.listeners.ChatListeners;
 
 public class Perms extends JavaPlugin {
 
     private static Perms ts;
+    private PermManager permManager;
+
     public files config;
     public files players;
     public files perms;
@@ -31,6 +35,13 @@ public class Perms extends JavaPlugin {
         config = new files("config.yml", this);
         players = new files("players.yml", this);
         perms = new files("perms.yml", this);
+
+        players.reload();
+        permManager = new PermManager(players.get());
+        getCommand("ex").setExecutor(new executeCommand(permManager));
+        getCommand("perms").setExecutor(new permsCommand(permManager));
+        getCommand("perms").setTabCompleter(new permsCommand(permManager));
+        getServer().getPluginManager().registerEvents(new ChatListeners(permManager), this);
 
         // def structure for the files
         if (!players.get().isSet("staff.Owner.commands")) players.get().set("staff.Owner.commands", new ArrayList<>());
@@ -64,11 +75,7 @@ public class Perms extends JavaPlugin {
             perms.get().set("CommandsList", commandList);
             perms.save();
         });
-
-        PermManager permManager = new PermManager(players.get());
-        PermsUtils permUtils = new PermsUtils(perms.get());
-        getServer().getPluginManager().registerEvents(new chatlistener(permManager, permUtils), this);
-
+        Bukkit.getScheduler().runTaskTimer(this, () -> {players.save();}, 20L * 30, 20L * 30);
         getLogger().info("Perms has been enabled!");
     }
 

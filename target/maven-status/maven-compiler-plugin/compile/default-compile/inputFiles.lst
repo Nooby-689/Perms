@@ -1,8 +1,9 @@
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/managers/PermManager.java
-/home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/managers/PermsUtils.java
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/Perms.java
-/home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/listeners/chatlistener.java
+/home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/listeners/ChatListeners.java
+/home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/commands/executeCommand.java
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/Files/files.java
+/home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/commands/permsCommand.java
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/utils/Utils.java
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/managers/PluginManager.java
 /home/dumply/Documents/projects/plugins/Perms/src/main/java/perms/listeners/PlayerListener.java

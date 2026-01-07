@@ -3,3 +3,12 @@ version: 1.0.0
 name: Perms
 author: DumplyBG
 api-version: 1.13
+commands:
+  ex:
+    description: Executes a command if you have perms
+    usage: /ex <command> [args...]
+  perms:
+    description: ts prob doesnt bother u 
+    name: Perms
+    usage: /perms add remove addrole removerole (u prob cant use this lol)
+
