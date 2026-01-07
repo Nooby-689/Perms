@@ -6,6 +6,8 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import perms.utils.PrefixUtil;
+
 public final class PermManager {
 
     private final FileConfiguration config;
@@ -116,6 +118,7 @@ public final class PermManager {
             users.add(playerName);
             config.set(rolePath + ".users", users);
             player.sendMessage("Done my guy :D");
+            PrefixUtil.apply(player, this);
         }
     }
 

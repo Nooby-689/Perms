@@ -16,6 +16,7 @@ import perms.Files.files;
 import perms.commands.executeCommand;
 import perms.commands.permsCommand;
 import perms.listeners.ChatListeners;
+import perms.listeners.PlayerListener;
 
 public class Perms extends JavaPlugin {
 
@@ -41,6 +42,7 @@ public class Perms extends JavaPlugin {
         getCommand("ex").setExecutor(new executeCommand(permManager));
         getCommand("perms").setExecutor(new permsCommand(permManager));
         getCommand("perms").setTabCompleter(new permsCommand(permManager));
+        getServer().getPluginManager().registerEvents(new PlayerListener(permManager), this);
         getServer().getPluginManager().registerEvents(new ChatListeners(permManager), this);
 
         // def structure for the files
@@ -54,11 +56,11 @@ public class Perms extends JavaPlugin {
         if (!players.get().isSet("staff.Helper.users")) players.get().set("staff.Helper.users", new ArrayList<>());
         if (!players.get().isSet("staff.CoOwner.users")) players.get().set("staff.CoOwner.users", new ArrayList<>());
         if (!players.get().isSet("members.member.users")) players.get().set("members.member.users", new ArrayList<>());
-        if (!players.get().isSet("staff.Owner.prefix")) players.get().set("staff.Owner.prefix", new ArrayList<>());
-        if (!players.get().isSet("staff.Mod.prefix")) players.get().set("staff.Mod.prefix", new ArrayList<>());
-        if (!players.get().isSet("staff.Helper.prefix")) players.get().set("staff.Helper.prefix", new ArrayList<>());
-        if (!players.get().isSet("staff.CoOwner.prefix")) players.get().set("staff.CoOwner.prefix", new ArrayList<>());
-        if (!players.get().isSet("members.member.prefix")) players.get().set("members.member.prefix", new ArrayList<>());
+        if (!players.get().isSet("staff.Owner.prefix")) players.get().set("staff.Owner.prefix", "");
+        if (!players.get().isSet("staff.Mod.prefix")) players.get().set("staff.Mod.prefix", "");
+        if (!players.get().isSet("staff.Helper.prefix")) players.get().set("staff.Helper.prefix", "");
+        if (!players.get().isSet("staff.CoOwner.prefix")) players.get().set("staff.CoOwner.prefix", "");
+        if (!players.get().isSet("members.member.prefix")) players.get().set("members.member.prefix", "");
         players.save();
 
         Bukkit.getScheduler().runTask(this, () -> {
