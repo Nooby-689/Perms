@@ -1,16 +1,18 @@
 package perms.commands;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.entity.Player;
 import perms.managers.PermManager;
 import perms.Perms;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class permsCommand implements CommandExecutor, TabCompleter {
 
@@ -42,10 +44,11 @@ public class permsCommand implements CommandExecutor, TabCompleter {
         String target = args[2];
 
         switch (action) {
-            case "add" -> pm.AddCommand(role, target, player);
-            case "remove" -> pm.RemoveCommand(role, target, player);
-            case "addrole" -> pm.AddPlayer(role, target, player);
-            case "removerole" -> pm.RemovePlayer(role, target, player);
+            case "add" -> pm.addCommand(role, target, player);
+            case "remove" -> pm.removeCommand(role, target, player);
+            case "addrole" -> pm.addPlayer(role, target, player);
+            case "removerole" -> pm.removePlayer(role, target, player);
+            case "setprefix" -> pm.setPrefix(role, target, player);
             default -> player.sendMessage("§cUnknown action. use add remove addrole removerole");
         }
 
@@ -64,13 +67,17 @@ public class permsCommand implements CommandExecutor, TabCompleter {
             suggestions.add("addrole");
             suggestions.add("removerole");
         } else if (args.length == 2) {
-            suggestions.addAll(pm.getStaffRoles());
-            suggestions.add("members.member");
+            suggestions.add("member");
+            suggestions.add("Owner");
+            suggestions.add("CoOwner");
+            suggestions.add("Mod");
+        } else if(args.length == 3 && (args[0] == "addrole" || args[0] == "removerole")) {
+            suggestions.addAll(Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()));
         } else if (args.length == 3) {
             List<String> allCommands = Perms.getInstance().perms.get().getStringList("CommandsList");
             suggestions.addAll(allCommands);
         }
-
-        return suggestions;
+        
+    return suggestions;
     }
 }

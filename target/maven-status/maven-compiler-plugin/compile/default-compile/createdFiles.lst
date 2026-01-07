@@ -7,3 +7,4 @@ perms/utils/Utils.class
 perms/Files/files.class
 perms/managers/PluginManager.class
 perms/listeners/ChatListeners.class
+perms/utils/PrefixUtil.class

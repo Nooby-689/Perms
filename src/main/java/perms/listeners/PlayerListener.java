@@ -17,6 +17,6 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-    PrefixUtil.apply(event.getPlayer(), permManager);
+        PrefixUtil.apply(event.getPlayer(), permManager);
     }
 }

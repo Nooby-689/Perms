@@ -46,21 +46,21 @@ public class Perms extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChatListeners(permManager), this);
 
         // def structure for the files
-        if (!players.get().isSet("staff.Owner.commands")) players.get().set("staff.Owner.commands", new ArrayList<>());
-        if (!players.get().isSet("staff.Mod.commands")) players.get().set("staff.Mod.commands", new ArrayList<>());
-        if (!players.get().isSet("staff.Helper.commands")) players.get().set("staff.Helper.commands", new ArrayList<>());
-        if (!players.get().isSet("staff.CoOwner.commands")) players.get().set("staff.CoOwner.commands", new ArrayList<>());
-        if (!players.get().isSet("members.member.commands")) players.get().set("members.member.commands", new ArrayList<>());
-        if (!players.get().isSet("staff.Owner.users")) players.get().set("staff.Owner.users", new ArrayList<>());
-        if (!players.get().isSet("staff.Mod.users")) players.get().set("staff.Mod.users", new ArrayList<>());
-        if (!players.get().isSet("staff.Helper.users")) players.get().set("staff.Helper.users", new ArrayList<>());
-        if (!players.get().isSet("staff.CoOwner.users")) players.get().set("staff.CoOwner.users", new ArrayList<>());
-        if (!players.get().isSet("members.member.users")) players.get().set("members.member.users", new ArrayList<>());
-        if (!players.get().isSet("staff.Owner.prefix")) players.get().set("staff.Owner.prefix", "");
-        if (!players.get().isSet("staff.Mod.prefix")) players.get().set("staff.Mod.prefix", "");
-        if (!players.get().isSet("staff.Helper.prefix")) players.get().set("staff.Helper.prefix", "");
-        if (!players.get().isSet("staff.CoOwner.prefix")) players.get().set("staff.CoOwner.prefix", "");
-        if (!players.get().isSet("members.member.prefix")) players.get().set("members.member.prefix", "");
+        if (!players.get().isSet("Owner.commands")) players.get().set("Owner.commands", new ArrayList<>());
+        if (!players.get().isSet("Mod.commands")) players.get().set("Mod.commands", new ArrayList<>());
+        if (!players.get().isSet("Helper.commands")) players.get().set("Helper.commands", new ArrayList<>());
+        if (!players.get().isSet("CoOwner.commands")) players.get().set("CoOwner.commands", new ArrayList<>());
+        if (!players.get().isSet("member.commands")) players.get().set("member.commands", new ArrayList<>());
+        if (!players.get().isSet("Owner.users")) players.get().set("Owner.users", new ArrayList<>());
+        if (!players.get().isSet("Mod.users")) players.get().set("Mod.users", new ArrayList<>());
+        if (!players.get().isSet("Helper.users")) players.get().set("Helper.users", new ArrayList<>());
+        if (!players.get().isSet("CoOwner.users")) players.get().set("CoOwner.users", new ArrayList<>());
+        if (!players.get().isSet("member.users")) players.get().set("member.users", new ArrayList<>());
+        if (!players.get().isSet("Owner.prefix")) players.get().set("Owner.prefix", "s");
+        if (!players.get().isSet("Mod.prefix")) players.get().set("Mod.prefix", "s");
+        if (!players.get().isSet("Helper.prefix")) players.get().set("Helper.prefix", "s");
+        if (!players.get().isSet("CoOwner.prefix")) players.get().set("CoOwner.prefix", "s");
+        if (!players.get().isSet("member.prefix")) players.get().set("member.prefix", "s");
         players.save();
 
         Bukkit.getScheduler().runTask(this, () -> {
